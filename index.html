@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TastyTracks - Premium Food Delivery & Dashboard. Order chef specials, track live delivery, and explore exclusive membership plans.">
+  <title>TastyTracks — Premium Food Delivery Dashboard</title>
+  
+  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Outer Background Container -->
+  <div class="outer-wrapper">
+    <!-- Main Dashboard White Surface Container -->
+    <main class="dashboard-container" id="mainDashboard">
+      
+      <!-- HEADER & BRAND SECTION -->
+      <header class="dashboard-header" role="banner">
+        <div class="header-left-spacer" aria-hidden="true"></div>
+        
+        <div class="header-center-brand">
+          <h1 class="brand-title">TastyTracks</h1>
+          <p class="brand-subtitle">Premium Food Delivery &amp; Dashboard</p>
+        </div>
+        
+        <div class="header-right-user">
+          <div class="user-avatar-wrapper">
+            <img src="assets/images/avatar.png" alt="Alex - TastyTracks PRO Member" class="user-avatar" id="userAvatar">
+            <span class="pro-badge" aria-label="Pro Membership Badge">PRO</span>
+          </div>
+          <span class="welcome-text">Welcome, <strong class="user-name">Alex!</strong></span>
+        </div>
+      </header>
+
+      <!-- Gradient Separator -->
+      <div class="gradient-divider" role="separator" aria-hidden="true"></div>
+
+      <!-- TODAY'S SPECIALS SECTION -->
+      <section class="dashboard-section specials-section" aria-labelledby="specialsHeading">
+        <div class="section-title-wrap">
+          <span class="vertical-accent" aria-hidden="true"></span>
+          <h2 id="specialsHeading" class="section-heading">Explore Today's Specials</h2>
+        </div>
+
+        <div class="specials-grid" role="list">
+          
+          <!-- Product Card 1: Pepperoni Pizza -->
+          <article class="food-card" role="listitem" tabindex="0" data-item-id="pizza" data-item-name="Pepperoni Pizza" data-item-price="12.99">
+            <div class="food-image-wrapper">
+              <span class="card-badge bestseller-badge">BEST SELLER</span>
+              <img src="assets/images/pepperoni-pizza.jpg" alt="Hot Pepperoni Pizza with melted mozzarella and fresh basil" class="food-image" loading="lazy">
+            </div>
+            <div class="food-card-content">
+              <h3 class="product-name">Pepperoni Pizza</h3>
+              <p class="product-description">Extra cheese with spicy Italian pepperoni.</p>
+              <div class="product-footer">
+                <span class="product-price">$12.99</span>
+                <button type="button" class="btn-select-item active" aria-label="Select Pepperoni Pizza for quick order" data-target-name="Pepperoni Pizza">
+                  <span>Selected</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product Card 2: Cheese Burger -->
+          <article class="food-card" role="listitem" tabindex="0" data-item-id="burger" data-item-name="Cheese Burger" data-item-price="9.50">
+            <div class="food-image-wrapper">
+              <img src="assets/images/cheese-burger.jpg" alt="Juicy double beef patty cheeseburger with bacon and cheddar" class="food-image" loading="lazy">
+            </div>
+            <div class="food-card-content">
+              <h3 class="product-name">Cheese Burger</h3>
+              <p class="product-description">Double beef patty with smoky crispy bacon.</p>
+              <div class="product-footer">
+                <span class="product-price">$9.50</span>
+                <button type="button" class="btn-select-item" aria-label="Select Cheese Burger for quick order" data-target-name="Cheese Burger">
+                  <span>Select Item</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product Card 3: Veggie Wrap -->
+          <article class="food-card" role="listitem" tabindex="0" data-item-id="wrap" data-item-name="Veggie Wrap" data-item-price="7.25">
+            <div class="food-image-wrapper">
+              <img src="assets/images/veggie-wrap.jpg" alt="Fresh vegetable wrap with avocado, crisp greens and spicy sauce" class="food-image" loading="lazy">
+            </div>
+            <div class="food-card-content">
+              <h3 class="product-name">Veggie Wrap</h3>
+              <p class="product-description">Fresh greens with spicy sauce in wheat wrap.</p>
+              <div class="product-footer">
+                <span class="product-price">$7.25</span>
+                <button type="button" class="btn-select-item" aria-label="Select Veggie Wrap for quick order" data-target-name="Veggie Wrap">
+                  <span>Select Item</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Gradient Separator -->
+      <div class="gradient-divider" role="separator" aria-hidden="true"></div>
+
+      <!-- QUICK ORDER FORM & CHEF'S SPECIAL SECTION -->
+      <section class="dashboard-section order-promo-section" aria-label="Quick Order and Chef Special">
+        <div class="order-promo-grid">
+          
+          <!-- Left Column: Quick Order Form -->
+          <div class="order-form-container">
+            <div class="section-title-wrap">
+              <span class="vertical-accent" aria-hidden="true"></span>
+              <h2 id="orderFormHeading" class="section-heading">🔥 Quick Order Form</h2>
+            </div>
+
+            <form id="quickOrderForm" class="quick-order-form" novalidate>
+              <!-- Selected item preview indicator -->
+              <div class="order-item-banner" id="orderItemBanner">
+                <span class="order-item-label">Ordering:</span>
+                <strong class="order-item-title" id="orderItemTitle">Pepperoni Pizza</strong>
+                <span class="order-item-badge" id="orderItemPriceTag">$12.99</span>
+              </div>
+
+              <!-- Recipient Name -->
+              <div class="form-group" id="groupRecipientName">
+                <label for="recipientName" class="form-label">Recipient Name <span class="required-star" aria-hidden="true">*</span></label>
+                <input 
+                  type="text" 
+                  id="recipientName" 
+                  name="recipientName" 
+                  class="form-input" 
+                  placeholder="Enter name" 
+                  autocomplete="name" 
+                  required 
+                  aria-describedby="recipientNameError"
+                >
+                <p class="form-error" id="recipientNameError" role="alert"></p>
+              </div>
+
+              <!-- Contact Number -->
+              <div class="form-group" id="groupContactNumber">
+                <label for="contactNumber" class="form-label">Contact Number <span class="required-star" aria-hidden="true">*</span></label>
+                <div class="input-with-prefix">
+                  <span class="country-prefix">+91</span>
+                  <input 
+                    type="tel" 
+                    id="contactNumber" 
+                    name="contactNumber" 
+                    class="form-input" 
+                    placeholder="10-digit mobile" 
+                    autocomplete="tel" 
+                    maxlength="14" 
+                    required 
+                    aria-describedby="contactNumberError"
+                  >
+                </div>
+                <p class="form-error" id="contactNumberError" role="alert"></p>
+                <p class="form-hint">Valid 10-digit Indian mobile number (e.g. 9876543210)</p>
+              </div>
+
+              <!-- Delivery Address -->
+              <div class="form-group" id="groupDeliveryAddress">
+                <label for="deliveryAddress" class="form-label">Delivery Address <span class="required-star" aria-hidden="true">*</span></label>
+                <textarea 
+                  id="deliveryAddress" 
+                  name="deliveryAddress" 
+                  class="form-textarea" 
+                  placeholder="Full home address..." 
+                  rows="3" 
+                  autocomplete="street-address" 
+                  required 
+                  aria-describedby="deliveryAddressError"
+                ></textarea>
+                <p class="form-error" id="deliveryAddressError" role="alert"></p>
+              </div>
+
+              <!-- Payment Method -->
+              <div class="form-group" id="groupPaymentMethod">
+                <fieldset class="payment-fieldset">
+                  <legend class="form-label">Payment Method <span class="required-star" aria-hidden="true">*</span></legend>
+                  <div class="payment-options" role="radiogroup" aria-required="true" aria-describedby="paymentMethodError">
+                    
+                    <label class="payment-option">
+                      <input type="radio" name="paymentMethod" value="Cash" class="payment-radio" checked>
+                      <span class="radio-custom"></span>
+                      <span class="payment-icon">💵</span>
+                      <span class="payment-text">Cash</span>
+                    </label>
+
+                    <label class="payment-option">
+                      <input type="radio" name="paymentMethod" value="Card" class="payment-radio">
+                      <span class="radio-custom"></span>
+                      <span class="payment-icon">💳</span>
+                      <span class="payment-text">Card</span>
+                    </label>
+
+                    <label class="payment-option">
+                      <input type="radio" name="paymentMethod" value="UPI" class="payment-radio">
+                      <span class="radio-custom"></span>
+                      <span class="payment-icon">⚡</span>
+                      <span class="payment-text">UPI</span>
+                    </label>
+
+                  </div>
+                </fieldset>
+                <p class="form-error" id="paymentMethodError" role="alert"></p>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- Right Column: Chef's Special Promotional Card -->
+          <aside class="chef-special-card" aria-label="Chef's Special Limited Offer">
+            <div class="chef-image-container">
+              <div class="discount-badge" aria-label="50 percent discount offer">
+                <span class="badge-text-line1">50%</span>
+                <span class="badge-text-line2">OFF</span>
+              </div>
+              <img src="assets/images/chef-special.jpg" alt="Chef's Special: Spicy Ramen with soft-boiled egg and refreshing iced tea" class="chef-food-image" loading="lazy">
+            </div>
+
+            <div class="chef-card-body">
+              <div class="chef-header-wrap">
+                <span class="chef-kicker">CHEF'S SPECIAL</span>
+                <div class="countdown-tag" id="offerCountdown" title="Time remaining for this offer">
+                  <span class="clock-icon">⏱️</span> 19:42 left
+                </div>
+              </div>
+              
+              <h3 class="chef-offer-title">Spicy Ramen + Iced Tea Combo</h3>
+              
+              <p class="chef-validity">Valid only for the next 20 minutes!</p>
+              
+              <div class="chef-pricing-row">
+                <div class="price-combo">
+                  <span class="original-price">$24.00</span>
+                  <span class="special-price">$12.00</span>
+                </div>
+                <button type="button" class="btn-claim-special" id="btnClaimSpecial" aria-label="Claim Chef's Special Spicy Ramen combo">
+                  <span>Claim Combo</span>
+                </button>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+      </section>
+
+      <!-- Gradient Separator -->
+      <div class="gradient-divider" role="separator" aria-hidden="true"></div>
+
+      <!-- MEMBERSHIP PLANS SECTION -->
+      <section class="dashboard-section membership-section" aria-labelledby="membershipHeading">
+        <div class="section-title-wrap">
+          <span class="vertical-accent" aria-hidden="true"></span>
+          <h2 id="membershipHeading" class="section-heading">Membership Plans</h2>
+        </div>
+
+        <!-- Membership Table Container -->
+        <div class="table-responsive-wrapper">
+          <table class="membership-table" id="membershipTable" aria-label="TastyTracks Subscription Tiers">
+            <thead>
+              <tr>
+                <th scope="col" class="th-plan">Plan Type</th>
+                <th scope="col" class="th-benefits">Benefits</th>
+                <th scope="col" class="th-fee">Monthly Fee</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Gold Plan -->
+              <tr class="membership-row" data-plan="Gold" data-fee="$19.99" tabindex="0" role="button" aria-pressed="false" aria-label="Select Gold Plan: Unlimited Free Delivery + 20% Cashback for $19.99 per month">
+                <td class="td-plan">
+                  <div class="plan-name-wrap">
+                    <span class="plan-selection-bullet" aria-hidden="true"></span>
+                    <strong class="plan-name">Gold</strong>
+                  </div>
+                </td>
+                <td class="td-benefits">Unlimited Free Delivery + 20% Cashback</td>
+                <td class="td-fee">$19.99</td>
+              </tr>
+
+              <!-- Silver Plan -->
+              <tr class="membership-row" data-plan="Silver" data-fee="$9.99" tabindex="0" role="button" aria-pressed="false" aria-label="Select Silver Plan: 10 Free Deliveries + 5% Cashback for $9.99 per month">
+                <td class="td-plan">
+                  <div class="plan-name-wrap">
+                    <span class="plan-selection-bullet" aria-hidden="true"></span>
+                    <strong class="plan-name">Silver</strong>
+                  </div>
+                </td>
+                <td class="td-benefits">10 Free Deliveries + 5% Cashback</td>
+                <td class="td-fee">$9.99</td>
+              </tr>
+
+              <!-- Free Plan (Default Active) -->
+              <tr class="membership-row is-selected" data-plan="Free" data-fee="$0.00" tabindex="0" role="button" aria-pressed="true" aria-label="Select Free Plan: Standard Delivery Fees Apply for $0.00 per month">
+                <td class="td-plan">
+                  <div class="plan-name-wrap">
+                    <span class="plan-selection-bullet" aria-hidden="true"></span>
+                    <strong class="plan-name">Free</strong>
+                  </div>
+                </td>
+                <td class="td-benefits">Standard Delivery Fees Apply</td>
+                <td class="td-fee">$0.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Membership Selection Summary Indicator -->
+        <div class="membership-summary-bar" id="membershipSummaryBar">
+          <div class="summary-info">
+            <span class="summary-check-icon">✓</span>
+            <span>Current Selected Plan: <strong id="selectedPlanName">Free</strong></span>
+            <span class="summary-pill" id="selectedPlanFee">$0.00 / month</span>
+          </div>
+          <span class="summary-note">Click any tier row above to switch your membership anytime.</span>
+        </div>
+      </section>
+
+      <!-- Gradient Separator -->
+      <div class="gradient-divider" role="separator" aria-hidden="true"></div>
+
+      <!-- LIVE DELIVERY TRACKER SECTION -->
+      <section class="dashboard-section tracker-section" aria-labelledby="trackerHeading">
+        <div class="section-title-wrap">
+          <span class="vertical-accent" aria-hidden="true"></span>
+          <h2 id="trackerHeading" class="section-heading">Live Delivery Tracker</h2>
+        </div>
+
+        <!-- Status message line -->
+        <p class="tracker-status-text" id="deliveryStatusText">Status: Your pizza is on the way!</p>
+
+        <!-- Rounded Progress Track -->
+        <div class="progress-track-wrapper">
+          <div 
+            class="progress-track" 
+            id="progressTrack" 
+            role="progressbar" 
+            aria-valuemin="0" 
+            aria-valuemax="100" 
+            aria-valuenow="70" 
+            aria-label="Order Delivery Progress"
+          >
+            <div class="progress-fill" id="progressFill" style="width: 70%;"></div>
+          </div>
+        </div>
+
+        <!-- Stage Milestones Guide -->
+        <div class="tracker-milestones" id="trackerMilestones" aria-hidden="true">
+          <div class="milestone is-passed" data-stage="1">
+            <span class="milestone-dot"></span>
+            <span class="milestone-label">Confirmed</span>
+          </div>
+          <div class="milestone is-passed" data-stage="2">
+            <span class="milestone-dot"></span>
+            <span class="milestone-label">Preparing</span>
+          </div>
+          <div class="milestone is-active" data-stage="3">
+            <span class="milestone-dot"></span>
+            <span class="milestone-label">On the way</span>
+          </div>
+          <div class="milestone" data-stage="4">
+            <span class="milestone-dot"></span>
+            <span class="milestone-label">Delivered</span>
+          </div>
+        </div>
+
+        <!-- Action Buttons Area -->
+        <div class="tracker-action-wrap">
+          <button type="button" class="btn-confirm-order" id="btnConfirmOrder">
+            CONFIRM ORDER
+          </button>
+          
+          <div class="simulation-controls" id="simulationControls">
+            <button type="button" class="btn-secondary-action" id="btnSimulateStep" title="Advance to next delivery stage">
+              <span>Next Stage &rarr;</span>
+            </button>
+            <button type="button" class="btn-secondary-action" id="btnResetOrder" title="Reset demo order">
+              <span>Reset Demo</span>
+            </button>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- BOTTOM PROMOTIONAL BANNER -->
+      <footer class="bottom-promo-banner" role="contentinfo">
+        <p class="banner-text">
+          Enjoy a FREE Dessert! <span class="banner-separator">|</span> New users get <span class="discount-highlight">$5 off</span> using code <code class="coupon-code" id="couponCode" title="Click to copy code">TASTY5</code> <span class="banner-separator">|</span> Enjoy our premium services.
+        </p>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- ORDER SUCCESS / FEEDBACK MODAL -->
+  <div class="modal-backdrop" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal-card">
+      <button type="button" class="modal-close" id="btnModalClose" aria-label="Close dialog">&times;</button>
+      <div class="modal-icon-wrap">
+        <span class="modal-icon">🎉</span>
+      </div>
+      <h3 class="modal-title" id="modalTitle">Order Confirmed!</h3>
+      <p class="modal-subtitle">Thank you, <strong id="modalCustomerName">Alex</strong>! We've fired up the kitchen.</p>
+      
+      <div class="modal-receipt" id="modalReceipt">
+        <div class="receipt-row">
+          <span>Item:</span>
+          <strong id="receiptItemName">Pepperoni Pizza</strong>
+        </div>
+        <div class="receipt-row">
+          <span>Amount:</span>
+          <strong id="receiptItemPrice">$12.99</strong>
+        </div>
+        <div class="receipt-row">
+          <span>Delivery To:</span>
+          <span id="receiptAddress" class="receipt-address-text">221B Baker St</span>
+        </div>
+        <div class="receipt-row">
+          <span>Payment:</span>
+          <span id="receiptPayment" class="receipt-badge">Cash</span>
+        </div>
+        <div class="receipt-row">
+          <span>Membership Perks:</span>
+          <span id="receiptMembership" class="receipt-badge perk">Standard Delivery</span>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn-modal-primary" id="btnModalTrack">Track Live Delivery</button>
+        <button type="button" class="btn-modal-secondary" id="btnModalNewOrder">Place Another Order</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-notification" id="toastNotification" role="status" aria-live="polite"></div>
+
+  <!-- Application Logic -->
+  <script src="js/app.js"></script>
+</body>
+</html>
